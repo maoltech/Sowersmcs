@@ -6,30 +6,26 @@ from django.contrib.auth.forms import AuthenticationForm
 from .models import CustomUser
 from wallets.models import Wallet
 from .services import assign_dedicated_account
-from django.forms.utils import ErrorList
-import socket
 # Create your views here.
 @login_required(login_url="/signin")
 def index(request):
     return render(request, 'index.html')
 
 def login(request):
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
-    print (ip_address)
     if request.method == 'POST':
 
         form = AuthenticationForm(request, request.POST)
-
         if form.is_valid():
             user = form.get_user()
-            if user.wallet.bank == "Bank":
-                auth_login(request, user)
-                return redirect('/settings')
-            else:
+            print(user)
+            if user.wallet.bank is not None:
                 auth_login(request, user)
                 return redirect('/')
+            else:
+                auth_login(request, user)
+                return redirect('/settings')
         else:
+            print(form.errors)
             messages.info(request, 'Invalid details')
             return redirect('/signin')
 
@@ -123,7 +119,7 @@ def settings(request):
             user.save()
 
             if user.wallet is not None:
-                return render(request, 'index.html', {"user": user})
+                return redirect('/')
             else:
                 messages.info(request, 'Invalid details')
             return redirect('settings')

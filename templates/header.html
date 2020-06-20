@@ -3,13 +3,17 @@
     <nav>
         <div class="header-container">
             <a href="/">Sowers MCS</a>
-            <a href="#wallet" class="nav-features">Wallet</a>
-            <a href="#dues-fines" class="nav-features">Dues/Fines</a>
-            <a href="#donations" class="nav-features">Donations</a>
-            <a href="#savings" class="nav-features">Savings</a>
-            <a href="#shares" class="nav-features">Shares</a>
-            <a href="#loans" class="nav-features">Loans</a>
-            
+            <button id="menu-button" class="menu-icon">
+                <i class="ri-menu-line"></i>
+            </button>
+            <div class="nav-features-container">
+                <a href="#wallet" class="nav-features">Wallet</a>
+                <a href="#dues-fines" class="nav-features">Dues/Fines</a>
+                <a href="#donations" class="nav-features">Donations</a>
+                <a href="#savings" class="nav-features">Savings</a>
+                <a href="#shares" class="nav-features">Shares</a>
+                <a href="#loans" class="nav-features">Loans</a>
+            </div>
             <span class="user-icon">
                 <a href="/settings">        
                     <i class="ri-user-fill"></i>
@@ -18,4 +22,14 @@
             </span>
         </div>
     </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.getElementById("menu-button");
+            const headerContainer = document.querySelector(".header-container");
+        
+            menuButton.addEventListener("click", function () {
+                headerContainer.classList.toggle("menu-open");
+            });
+        });
+    </script>
 </header>
