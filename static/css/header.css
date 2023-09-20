@@ -1,0 +1,61 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the container */
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 1200px; /* Adjust as needed */
+    padding: 20px;
+}
+
+/* Style the header */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
