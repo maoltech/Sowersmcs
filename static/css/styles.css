@@ -1,6 +1,3 @@
-/* Reset some default styles */
-
-
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
@@ -185,65 +182,3 @@ img {
     margin-bottom: 2rem;
   }
 }
-
-/*body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-}
-
-
-.container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
-    max-width: 400px;
-    padding: 20px;
-}
-
-
-.login-form {
-    padding: 20px;
-}
-
-.login-form .form-group {
-    margin-bottom: 15px;
-}
-
-.login-form label {
-    font-weight: bold;
-}
-
-.login-form input[type="tel"],
-.login-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-
-@media (max-width: 768px) {
-    .container {
-        max-width: 100%;
-    }
-} */

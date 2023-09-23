@@ -1,20 +1,77 @@
 {% load static %}
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>SignUp - Sowers</title>
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
 
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+      
+   </head>
+   <body>
+      <div class="login">
+         <img src="{% static 'img/login-bg.png' %}" alt="image" class="login__bg">
+
+         <h1>Sowers</h1>
+         <form action="" method="POST" class="login__form">
+            {% csrf_token %}
+            <h1 class="login__title">SignUp</h1>
+
+            <div class="login__inputs">
+               <div class="login__box">
+                  <input type="tel" placeholder="+234567890" required class="login__input" name="phone" required>
+                  <i class="ri-phone-fill"></i>
+               </div>
+
+               <div class="login__box">
+                  <input type="password" placeholder="Password" required class="login__input" name="password" required>
+                  <i class="ri-lock-2-fill"></i>
+               </div>
+
+               <div class="login__box">
+                  <input type="name" placeholder="Full name" required class="login__input" name="name" required>
+                  <i class="ri-lock-2-fill"></i>
+               </div>
+
+               <div class="login__box">
+                  <input type="mail" placeholder="yourmail@mail.com" required class="login__input" name="name" required>
+                  <i class="ri-mail-fill"></i>
+               </div>
+            </div>
+
+            <button type="submit" class="login__button">SignUp</button>
+
+            <div class="login__register">
+               have acoount <a href="/login"> SignIn</a>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
+
+
+
+{% comment %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Sowers</title>
+    <title>Login - Sowers</title>
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/signuo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
     {% include 'header.html' %}
     <div class="container">
-        <h2>Sign Up</h2>
-        <form action="" method="POST" class="signup-form">
+        <h2>Login</h2>
+        <form action="" method="POST" class="login-form">
             {% csrf_token %}
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
@@ -24,17 +81,62 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <div class="form-group">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <button type="submit" class="btn">Sign Up</button>
+            <button type="submit" class="btn">Login</button>
         </form>
     </div>
     {% include 'footer.html' %}
 </body>
-</html>
+</html> {% endcomment %}
+
+
+
+
+{% comment %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sowers</title>
+
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="login">
+        <img src="{% static 'img/login-bg.png' %}" alt="image" class="login__bg">
+        
+        <form action="" method="POST" class="login-form">
+            {% csrf_token %}
+            <h1 class="login__title">signup</h1>
+
+            <div class="login__inputs">
+               <div class="login__box">
+                  <input type="tel" placeholder="+234567890" required class="login__input" name="phone">
+                  <i class="ri-phone-fill"></i>
+               </div>
+            
+                <div class="login__box">
+                  <input type="password" placeholder="Password" required class="login__input" name="password">
+                  <i class="ri-lock-2-fill"></i>
+               </div>
+
+               <div class="login__box">
+                    <input type="text" placeholder="Full Name" required class="login__input" name="name">
+                    <i class="ri-lock-2-fill"></i>
+                </div>
+
+                <div class="login__box">
+                    <input type="email" placeholder="yourmail@mail.com" required class="login__input" name="mail">
+                    <i class="ri-mail-fill"></i>
+                </div>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html> {% endcomment %}
