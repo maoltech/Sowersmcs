@@ -1,0 +1,88 @@
+
+
+/* Style the sections as boxes */
+section {
+    background: linear-gradient(to bottom, #f2f2f2, #ccc);
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+    width: 25%;
+    height: 150px;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style the wallet section to be a larger div */
+#wallet {
+    background-color: #2196F3;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 20px;
+    width: 40%;
+}
+
+/* Additional styles for headings and paragraph */
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.features{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 45%;
+}
+
+.info{
+    display: flex;
+    flex-wrap: wrap;  
+}
+
+.animation-text {
+    animation: textAnimation 4s infinite;
+}
+
+@keyframes textAnimation {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Make the sections responsive */
+@media (max-width: 768px) {
+    section {
+        margin: 10px;
+        padding: 10px;
+        margin: 15px;
+        padding: 15px;
+        width: 25%;
+
+    }
+
+    #wallet {
+        padding: 20px;
+        margin: 10px;
+        width: 95%;
+    }
+
+    .features{
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    #heck-mobile-img{
+        display: none;
+    }
+}

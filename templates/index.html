@@ -1,41 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cooperative Financial Tracker</title>
-    <style>
-        /* Add your CSS styling here */
-    </style>
+    <title>Sowers MCS</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#wallet">Wallet</a></li>
-            <li><a href="#dues-fines">Dues/Fines</a></li>
-            <li><a href="#donations">Donations</a></li>
-            <li><a href="#savings">Savings</a></li>
-            <li><a href="#loans">Loans</a></li>
-        </ul>
-    </nav>
-    <div id="wallet" class="wallet">
-        
-    </div>
-    <section id="dues-fines">
-        <p>DUES AND FINES</p>
-    </section>
-    <section id="donations">
-        <p>DONATIONS</p>
-    </section>
-    <section id="savings">
-        <p>SAVINGS</p>
-    </section>
-    <section id="loans">
-        <p>LOANS</p>
-    </section>
-    <section id="loans">
-        <p>SHARES</p>
-    </section>
-    
-</body>
+    {% include 'header.html' %}
+    <body>
+        <div class='info'>
+            <div id="wallet" class="wallet">
+                <h2> Wallet</h2>
+                <p>N5000<p>
+            </div>
+            <div>
+                <h2 class="animation-text">We're here to help you grow</h2>
+            </div>
+        </div>
+        <div class='info'>
+            <div class="features">
+                <section id="dues-fines">
+                    <h2>DUES AND FINES</h2>
+                </section>
+                <section id="donations">
+                    <h2>DONATIONS</h2>
+                </section>
+                <section id="savings">
+                    <h2>SAVINGS</h2>
+                </section>
+                <section id="loans">
+                    <h2>LOANS</h2>
+                </section>
+                <section id="loans">
+                    <h2>SHARES</h2>
+                </section>
+            </div>  
+            <div class="features" id="heck-mobile-img">
+                <img src="{%static 'img/finance-png.png'%}" alt="Finance Image">
+            <div>
+        </div>
+    </body>
+    {% comment %} {% include 'footer.html' %} {% endcomment %}
 </html>
