@@ -2,7 +2,7 @@ from django.db import models
 import uuid
 from core.models import User
 # Create your models here.
-class Savings(models.Model):
+class Saving(models.Model):
     savingsId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     balance = models.DecimalField(max_digits=10, decimal_places=2)
     savingsCounts = models.IntegerField()
