@@ -21,7 +21,16 @@
          <form action="" method="POST" class="login__form">
             {% csrf_token %}
             <h1 class="login__title">SignUp</h1>
-
+            <div class="error">
+               <style>
+                  h5{
+                     color: pink;
+                  }
+               </style>
+               {% for message in messages %}
+               <h5>{{message}}</h5>
+               {% endfor %}
+            </div>
             <div class="login__inputs">
                <div class="login__box">
                   <input type="tel" placeholder="+234567890" required class="login__input" name="phone" required>
@@ -32,15 +41,15 @@
                   <input type="password" placeholder="Password" required class="login__input" name="password" required>
                   <i class="ri-lock-2-fill"></i>
                </div>
-
+               
                <div class="login__box">
-                  <input type="name" placeholder="Full name" required class="login__input" name="name" required>
+                  <input type="password" placeholder="Confirm Password" required class="login__input" name="password1" required>
                   <i class="ri-lock-2-fill"></i>
                </div>
 
                <div class="login__box">
-                  <input type="mail" placeholder="yourmail@mail.com" required class="login__input" name="name" required>
-                  <i class="ri-mail-fill"></i>
+                  <input type="name" placeholder="username" required class="login__input" name="username" required>
+                  <i class="ri-name-fill"></i>
                </div>
             </div>
 
