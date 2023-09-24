@@ -6,10 +6,11 @@ class User(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     firstName = models.TextField(max_length=100)
     lastName = models.TextField(max_length=100)
+    password = models.CharField(max_length=250, default="1234")
     username = models.TextField(unique=True, max_length=100)
     email = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    DOB = models.DateField(max_length=20)
+    DOB = models.DateField(max_length=20, null=True)
     occupation= models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     LGA = models.CharField(max_length=100)
@@ -17,7 +18,7 @@ class User(models.Model):
     wallet = models.ForeignKey(Wallet, on_delete=models.CASCADE, related_name='users', null=True, blank=True)
     image = models.ImageField(upload_to='user_image', default='blank-user-image.png')
 
-def __str__(self):
-    return self.username
+    def __str__(self):
+        return self.username
 
 

@@ -7,7 +7,7 @@ class Wallet(models.Model):
     transactionCounts = models.IntegerField()
 
 
-def __str__(self):
-    return self.balance
+    def __str__(self):
+        return self.balance
 
 

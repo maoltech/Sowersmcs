@@ -10,7 +10,7 @@ class Loan(models.Model):
     loaner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='loans')
     
 
-def __str__(self):
-    return self.loanId
+    def __str__(self):
+        return self.loanId
 
 

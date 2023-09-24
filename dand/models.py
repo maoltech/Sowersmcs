@@ -11,7 +11,7 @@ class dand(models.Model):
     User = models.ForeignKey(User, on_delete=models.CASCADE, related_name='dands')
 
 
-def __str__(self):
-    return self.amount
+    def __str__(self):
+        return self.amount
 
 

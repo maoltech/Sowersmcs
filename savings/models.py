@@ -9,7 +9,7 @@ class Saving(models.Model):
     saver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='savings')
     
 
-def __str__(self):
-    return self.savingsId
+    def __str__(self):
+        return self.savingsId
 
 
