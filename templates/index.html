@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sowers MCS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
@@ -16,32 +17,85 @@
                 <h2> Wallet</h2>
                 <p>N5000<p>
             </div>
-            <div>
-                <h2 class="animation-text">We're here to help you grow</h2>
+            <div id="wallet" class="wallet">
+                <h2> savings</h2>
+                <p>N5000<p>
             </div>
+
         </div>
-        <div class='info'>
-            <div class="features">
-                <section id="dues-fines">
-                    <h2>DUES AND FINES</h2>
-                </section>
-                <section id="donations">
-                    <h2>DONATIONS</h2>
-                </section>
-                <section id="savings">
-                    <h2>SAVINGS</h2>
-                </section>
-                <section id="loans">
-                    <h2>LOANS</h2>
-                </section>
-                <section id="loans">
-                    <h2>SHARES</h2>
-                </section>
-            </div>  
-            <div class="features" id="heck-mobile-img">
-                <img src="{%static 'img/finance-png.png'%}" alt="Finance Image">
-            <div>
+        <div class='Transatcion'>
+            <div class="transaction-history">
+                 <h2>Transaction History</h2>
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample transaction data, replace with your actual data -->
+                <tr>
+                    <td>$100</td>
+                    <td>Deposit</td>
+                    <td>Completed</td>
+                    <td>John Doe</td>
+                    <!-- Add more rows with transaction data -->
+                </tr>
+                <!-- Repeat this row structure for each transaction -->
+            </tbody>
+        </table>
+            
+                <div class="pagination">
+                    <button class="prev-btn">&lt; Prev</button>
+                    <button class="next-btn">Next &gt;</button>
+                </div>
+            </div>
         </div>
     </body>
     {% comment %} {% include 'footer.html' %} {% endcomment %}
+    <script>
+        $(document).ready(function() {
+            const itemsPerPage = 5; // Number of items to display per page
+            let currentPage = 1;   // Current page
+        
+            const $transactionItems = $('.transaction-item');
+            const $prevButton = $('.prev-btn');
+            const $nextButton = $('.next-btn');
+        
+            const totalPages = Math.ceil($transactionItems.length / itemsPerPage);
+        
+            // Function to show items on the current page
+            function showItems(page) {
+                $transactionItems.hide();
+                const startIndex = (page - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+        
+                $transactionItems.slice(startIndex, endIndex).show();
+            }
+        
+            // Initial page load
+            showItems(currentPage);
+        
+            // Previous button click event
+            $prevButton.click(function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showItems(currentPage);
+                }
+            });
+        
+            // Next button click event
+            $nextButton.click(function() {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    showItems(currentPage);
+                }
+            });
+        });
+        </script>
+        
 </html>

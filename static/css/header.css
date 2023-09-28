@@ -5,13 +5,21 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.user-icon{
+    margin-right: 0px;
+    margin-left: auto;
+}
+
 /* Style the container */
 .container {
+    display: flex;
     background-color: #ffffff;
     border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin: 10px auto;
-    width: 80%; /* Adjust as needed */
+    width: 80%; 
     padding: 20px;
 }
 

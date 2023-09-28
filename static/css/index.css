@@ -1,16 +1,6 @@
 
 
-/* Style the sections as boxes */
-section {
-    background: linear-gradient(to bottom, #f2f2f2, #ccc);
-    border-radius: 10px;
-    margin: 15px;
-    padding: 15px;
-    width: 25%;
-    height: 150px;
-    align-items: center;
-    text-align: center;
-}
+
 
 /* Style the wallet section to be a larger div */
 #wallet {
@@ -19,7 +9,7 @@ section {
     padding: 40px;
     border-radius: 20px;
     margin: 20px;
-    width: 40%;
+    width: 20%;
 }
 
 /* Additional styles for headings and paragraph */
@@ -31,27 +21,62 @@ p {
     font-size: 18px;
 }
 
-.features{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 45%;
-}
-
 .info{
     display: flex;
     flex-wrap: wrap;  
+    margin: 0 auto;
+    align-items: center;
+    max-width: 70%;
+    
 }
 
-.animation-text {
-    animation: textAnimation 4s infinite;
+/* table design */
+.transaction-history{
+   max-width: 70%;
+   align-items: center;
+   margin: 0 auto;
 }
 
-@keyframes textAnimation {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+.transaction-table {
+    margin-top: 20px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #f5f5f5;
+}
+
+th, td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.prev-btn, .next-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #0056b3;
+}
+
 
 /* Make the sections responsive */
 @media (max-width: 768px) {
@@ -84,5 +109,17 @@ p {
 
     #heck-mobile-img{
         display: none;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px 10px;
+    }
+
+    .pagination {
+        margin-top: 10px;
     }
 }

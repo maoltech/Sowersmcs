@@ -1,0 +1,17 @@
+# render.yaml
+
+services:
+  - name: Install Dependencies
+    command: |
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install -r requirements.txt
+
+  - name: web
+    buildCommand: null
+    startCommand: python manage.py runserver 
+    env:
+      - key: PYTHON_VERSION
+        value: 3.11
+
+
