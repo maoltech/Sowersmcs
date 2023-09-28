@@ -9,7 +9,7 @@ services:
 
   - name: web
     buildCommand: null
-    startCommand: python manage.py runserver 
+    startCommand: python manage.py runserver 0.0.0.0:8080
     env:
       - key: PYTHON_VERSION
         value: 3.11
