@@ -18,13 +18,12 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 10px auto;
+    margin: 5px auto;
     width: 80%; 
-    padding: 20px;
+    padding: 10px;
 }
 
 /* Style the header */
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -55,5 +54,9 @@ nav a:hover {
 
     nav a {
         margin: 10px 0;
+    }
+
+    .nav-features{
+        display: none;
     }
 }

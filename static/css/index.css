@@ -1,17 +1,45 @@
 
 
-
+body{
+    margin: 0 auto;
+    padding: 0;
+    align-items: center;
+}
 
 /* Style the wallet section to be a larger div */
 #wallet {
     background-color: #2196F3;
     color: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 20px;
     margin: 20px;
     width: 20%;
 }
 
+.money{
+    background-color: #fff;
+    border: solid 1px #2196F3;
+    color: #2196F3;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 5px;
+    width: 100px;  
+    align-items: center;
+    text-align: center;
+    position: auto;
+    cursor: pointer;
+}
+
+.money:hover{
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.exchange{
+    align-items: center;
+    margin: 0 auto;
+}
 /* Additional styles for headings and paragraph */
 h2 {
     font-size: 24px;
@@ -54,10 +82,16 @@ thead {
 th, td {
     padding: 10px 15px;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
 
 tbody tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+tbody tr:hover{
+    background-color: #c6c2c2;
+    
 }
 
 .pagination {
@@ -113,6 +147,7 @@ tbody tr:nth-child(even) {
 
     table {
         font-size: 14px;
+        max-width: 100%;
     }
 
     th, td {

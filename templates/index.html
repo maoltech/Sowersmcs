@@ -15,17 +15,18 @@
         <div class='info'>
             <div id="wallet" class="wallet">
                 <h2> Wallet</h2>
-                <p>N5000<p>
+                <p>N{{wallet.balance}}</p>
             </div>
-            <div id="wallet" class="wallet">
-                <h2> savings</h2>
-                <p>N5000<p>
+            <div class="exchange">
+                <div class="money">Transfer</div>
+                <div class="money">Fund</div>
             </div>
+            <p>Welcome {{user.username}}</p>
 
         </div>
         <div class='Transatcion'>
             <div class="transaction-history">
-                 <h2>Transaction History</h2>
+                 <h3>Transaction History</h3>
         <table class="transaction-table">
             <thead>
                 <tr>
@@ -43,6 +44,7 @@
                     <td>Deposit</td>
                     <td>Completed</td>
                     <td>John Doe</td>
+                    <td>Fund wallet</td>
                     <!-- Add more rows with transaction data -->
                 </tr>
                 <!-- Repeat this row structure for each transaction -->
