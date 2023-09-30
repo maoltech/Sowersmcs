@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import User
-from wallets.models import Wallet
 from django.contrib.auth import login as auth_login, logout as auth_logout
+from django.contrib.auth.models import User, auth
+from .models import CustomUser
 # Create your views here.
 @login_required(login_url="signin")
 def index(request):
@@ -14,24 +14,8 @@ def login(request):
         phone = request.POST['phone']
         password = request.POST['password']
 
-        user = User.objects.get(phone=phone, password=password)
-        user_wallet = user.wallet
-
-        if user is not None:
-            return render(request, 'index.html', {"user": user, "wallet": user_wallet} )
-        else:
-            messages.info(request, 'Invalid details')
-            return redirect('login')
-
-    return render(request, 'login.html')
-
-@login_required(login_url="signin")
-def logOut(request):
-    if request.method == 'POST':
-        phone = request.POST['phone']
-        password = request.POST['password']
-
-        user = User.objects.get(phone=phone, password = password)
+        user = auth.authenticate(request, phone=phone, password=password)
+        print(user)
 
         if user is not None:
             auth_login(request, user)
@@ -40,7 +24,12 @@ def logOut(request):
             messages.info(request, 'Invalid details')
             return redirect('login')
 
-    return render(request, 'login.html') 
+    return render(request, 'login.html')
+
+@login_required(login_url="signin")
+def logOut(request):
+    auth.logout(request)
+    return redirect('sigin')
 
 def signup(request):
     if request.method == 'POST':
@@ -48,31 +37,24 @@ def signup(request):
         password = request.POST['password']
         phone = request.POST['phone']
         password1 = request.POST['password1']
-        print (username, password, phone, password1)
+
         if password != password1:
             messages.info(request, 'Password Does Not match')
             return redirect('signup')
         else:
-            if User.objects.filter(phone=phone).exists():
+            if CustomUser.objects.filter(phone=phone).exists():
                 messages.info(request, 'Phone number already exist')
                 return redirect('signup') 
-            elif User.objects.filter(username=username).exists():
+            elif CustomUser.objects.filter(username=username).exists():
                 messages.info(request, 'Username already exist ')
                 return redirect('signup') 
-            else:
-
-                wallet = Wallet.objects.create(
-                    balance=2000.00,
-                    transactionCounts=0   
-                )
-                
-                user = User.objects.create(
+            else:                
+                user = CustomUser.objects.create_user(
                     username=username,
                     phone=phone,
-                    password=password,
-                    wallet = wallet
+                    password=password
                 )
-                
+                print(user)
                 user.save()
                 
                 if user is not None:

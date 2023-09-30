@@ -1,14 +1,10 @@
 from django.db import models
 from wallets.models import Wallet
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
 import uuid  
 # Create your models here.
-class User(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    firstName = models.TextField(max_length=100)
-    lastName = models.TextField(max_length=100)
-    password = models.CharField(max_length=250, default="1234")
-    username = models.TextField(unique=True, max_length=100)
-    email = models.CharField(max_length=100)
+class CustomUser(AbstractUser):
     phone = models.CharField(max_length=20)
     DOB = models.DateField(max_length=20, null=True)
     occupation= models.CharField(max_length=100)
@@ -21,6 +17,7 @@ class User(models.Model):
     def __str__(self):
         return self.username
 
+User = get_user_model()
 class Loan(models.Model):
     loanId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
