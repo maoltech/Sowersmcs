@@ -23,7 +23,7 @@
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Profile</a>
         </li>
         </ul>
-            <form method="POST">
+            <form action="" method="POST">
                 {%csrf_token%}
                 <div class="row mt-5 align-items-center">
                     <div class="col-md-3 text-center mb-5">
@@ -52,6 +52,16 @@
                     <div class="form-group col-md-6">
                         <label for="lastname">Lastname</label>
                         <input type="text" id="lastname" class="form-control" placeholder="Last Name" name="lastName" />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="midllename">Middlename</label>
+                        <input type="text" id="middlename" class="form-control" placeholder="Last Name" name="middleName" />
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+                        <label for="BVN">BVN</label>
+                        <input type="text" id="BVN" class="form-control" placeholder="1234567890" name="BVN" />
                     </div>
 
                 </div>

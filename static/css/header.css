@@ -11,7 +11,7 @@ body {
 }
 
 /* Style the container */
-.container {
+.header-container {
     display: flex;
     background-color: #ffffff;
     border-radius: 10px;
@@ -44,7 +44,7 @@ nav a:hover {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .container {
+    .header-container {
         max-width: 100%;
     }
 
